@@ -19,10 +19,18 @@
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
 function sumOdds(numbers) {
-  // Your code here
+let total = 0
+for (let i = 0; i < numbers.length; ++i){
+  if (numbers[i] % 2 === 1){
+    total += numbers[i]
+  }
+}return total 
 }
 
-// console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
+
+
+
+//console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
 /**
  * characterCount(string, c):
@@ -37,7 +45,16 @@ function sumOdds(numbers) {
  * Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  // Your code here
+  let LC = string.toLowerCase()
+  let count = 0
+
+for (let i=0; i < LC.length; i++){
+  if(LC[i] === c) {count++}
+
+  
+}
+return count
+  
 }
 
 // console.log(characterCount("Character Count is clever", "c"));
@@ -58,7 +75,12 @@ function characterCount(string, c) {
  * differences([11, 35, 52, 14, 56]) -> [24,  17, -38,  42]
  */
 function differences(numbers) {
-  // Your code here
+  let first = numbers[0] - numbers[1]
+  let second = numbers[1] - numbers[2]
+  let third = numbers[2] - numbers [3]
+  let fourth = numbers[3] - numbers[4]
+  let final = [first , second , third , fourth ]
+  return final
 }
 
 // console.log(differences([11, 35, 52, 14, 56]));
@@ -80,7 +102,13 @@ function differences(numbers) {
  * largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> 545
  */
 function largestIncrement(numbers) {
-  // Your code here
+let arry = []
+for (let i = 0;i < numbers.length; ++i){
+arry.push(numbers[i+1] - numbers[i])
+}
+return  Math.max(...arry)
+ 
+
 }
 
 // console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
@@ -97,7 +125,10 @@ function largestIncrement(numbers) {
  * afterX([11, 35, 52, 14, 56, 601, 777, 888, 999], 52) -> [14, 56, 601, 777, 888, 999]
  */
 function afterX(numbers, x) {
-  // Your code here
+  for (let i = 0; i < numbers.length; ++i){
+    if (numbers[i] === x){return numbers.slice(i+1)}
+  }
+  
 }
 
 // console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
